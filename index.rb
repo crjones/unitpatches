@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'rmagick'
+require 'RMagick'
 
 get '/:numbers' do
   content_type 'image/png'
