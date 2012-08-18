@@ -8,9 +8,9 @@ get '/:numbers' do
   content_type 'image/png'
   il = Magick::ImageList.new
   params[:numbers].each_char do |number|
-    il.push(Magick::Image.read(number + ".gif"))
+    il.push(Magick::Image.read(number + ".gif").first)
 	end
-  img = il.append(true)  
+  img = il.append(false)  
   img.format = 'png'
   img.to_blob
 end
